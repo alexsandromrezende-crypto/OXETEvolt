@@ -1,0 +1,64 @@
+INDÚSTRIA OXENTEVOLT — INSTRUÇÕES
+
+1. Extraia o arquivo ZIP mantendo index.html, style.css e script.js na mesma pasta.
+2. Abra index.html em Chrome, Edge ou Firefox moderno. Não precisa de servidor ou internet.
+3. Cadastre nome e matrícula. A foto é opcional. Marque o consentimento para incluí-la no relatório.
+4. Caminhe com W/A/S/D, setas, controles na tela ou gamepad (analógico esquerdo).
+5. Use E, o botão de ação na tela ou A no gamepad perto do marcador amarelo.
+6. Conclua, em ordem, 6 missões: Leiaute, PCP, MRP, Montagem, Preço e Enigma Verde.
+7. Use os botões ↶ ↷ para girar a câmera. Checkpoints são círculos no piso. Há 54 obstáculos dinâmicos, agora mais rápidos; colisão provoca retorno ao último checkpoint e proteção temporária.
+8. Cada acerto vale 100 pontos e 60 XP. Erros descontam 8 pontos e dicas dos enigmas descontam 12 pontos. A pontuação pode ser negativa; a nota é limitada a 0–10.
+9. Use Relatório > Imprimir / salvar em PDF. No navegador, selecione "Salvar como PDF" na janela de impressão. Isso cria o PDF sem biblioteca ou serviços online.
+10. No painel do administrador local, o PIN didático é 1234. Ele não é seguro.
+
+IMPORTANTE SOBRE OS DADOS
+- Apenas localStorage do navegador; não há servidor, nuvem, banco de dados ou autenticação real.
+- A matrícula funciona como identificador e qualquer pessoa usando o mesmo perfil do navegador pode acessar os dados locais.
+- O painel do administrador mostra somente estudantes que usaram o mesmo navegador/perfil.
+- Limpar dados de navegação ou usar outro computador pode apagar/tornar inacessível o progresso.
+- A foto opcional é reduzida a uma miniatura e fica no armazenamento local. Ela será incluída no relatório apenas com autorização.
+- Não use nomes ou fotos sem autorização da escola e, quando aplicável, dos responsáveis; não colete informações sensíveis.
+- Para uso com muitas turmas e relatórios centralizados é necessário backend real, controles de acesso e adequação à LGPD.
+
+ESTRUTURA DOS ARQUIVOS
+- index.html: páginas e elementos da interface.
+- style.css: estilo, responsividade e impressão.
+- script.js: jogo, cenário de geometria tridimensional projetada em Canvas, com rotação da câmera, obstáculos, missões, persistência e relatórios.
+
+FUNCIONAMENTO PEDAGÓGICO
+- Missões: 3 desafios cada, totalizando 18.
+- O fluxograma do leiaute é linear, sem ponto de decisão.
+- O PCP aborda a árvore do produto; o MRP calcula necessidades brutas sem estoque nem perdas.
+- A montagem utiliza a lista de componentes do carro; a formação de preço aplica markup sobre custo.
+- Enigmas verdes são sorteados de um banco e evitam repetir os três utilizados na campanha imediatamente anterior, quando possível.
+- Os valores monetários das peças são fictícios e somente para fins de simulação.
+- A imagem do cenário usa formas e símbolos desenhados pelo navegador, sem dependências externas.
+
+VERSÃO 1.0 — DEMONSTRAÇÃO OFFLINE
+
+ALTERAÇÕES DA VERSÃO 2.0
+- 54 obstáculos móveis com trajetórias e velocidades variadas; colisões mantêm retorno a checkpoint e proteção breve.
+- Equipamentos e elementos de chão de fábrica revisados para contexto automotivo.
+- Geometria volumétrica 3D com projeção no Canvas e câmera giratória (renderização geométrica sem WebGL, não são modelos CAD 3D detalhados).
+- Leiaute: cartões misturados; estudante precisa deduzir a ordem, sem gabarito no enunciado.
+- Montagem: esqueleto do carro com zonas interativas e bancada de componentes. Arraste a peça e solte na zona; no celular, toque na peça e depois na zona. Erros devolvem a peça e descontam 8 pontos.
+- MRP: peças sorteadas nessa missão são reaproveitadas na montagem.
+- Mantidos seis grupos de missão, três desafios em cada grupo, cadastro local, indicadores, obstáculos, relatórios e painel local.
+- Em caso de publicação, envie toda a pasta para a hospedagem. Sem backend, cada navegador guarda dados independentemente.
+
+
+ATUALIZAÇÃO 2.1
+- Cadastro: botões separados para escolher foto e tirar foto, com visualização prévia.
+- Foto após login: botão Foto no cabeçalho. A foto só aparece no relatório mediante autorização.
+- Orientação: seta de direção, linha pontilhada para a missão visível e indicação de distância até a missão ativa.
+- Zoom: roda do mouse sobre a fábrica ou botões + e −.
+- Montagem: oito encaixes para motor elétrico, rodas dianteiras, rodas traseiras, bateria, bancos, capô, para-choque dianteiro e para-choque traseiro.
+- Erro de encaixe: a peça retorna à bancada e o jogador perde 8 pontos.
+- Preço: um único desafio na missão, com cenários variados. A proposta muda após uma resposta errada e após reiniciar a campanha.
+- Total de desafios por campanha: 21 (3 + 3 + 3 + 8 + 1 + 3).
+- A câmera pode depender da permissão e das capacidades do navegador. Para uso local, a seleção de arquivo é mais compatível; para câmera diretamente no site online, use HTTPS.
+- Campanhas antigas são adaptadas ao novo conjunto de peças: se a missão de montagem já havia sido concluída, será necessário repeti-la nesta versão.
+
+CÂMERA INTEGRADA (v2.2)
+No cadastro, clique em Tirar foto, autorize o acesso à câmera, clique em Capturar foto e depois em Usar esta foto. A foto aparece no avatar e na cabeça do boneco. O botão Foto no topo permite tirar outra fotografia durante a campanha.
+Para imprimir a foto no relatório, marque a autorização do cadastro. A fotografia fica apenas no armazenamento local do navegador. O vídeo não é transmitido. Em caso de falha da câmera, execute com localhost ou HTTPS e permita acesso à câmera; a opção Escolher foto continua disponível.
